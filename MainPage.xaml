@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aho.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="imagenAhorcado" 
+                       HorizontalOptions="Center"
+                       />
+                <Label x:Name="labelMultiplicacion"
+                       Padding="20"
+                       FontSize="24" 
+                       HorizontalOptions="Center"
+                       Grid.Column="1"/>
+                <Entry x:Name="textBoxRespuesta"
+                       
+                       Placeholder="Introduce tu respuesta" 
+                       FontSize="24"
+                       Keyboard="Numeric" 
+                       HorizontalOptions="Center" 
+                       WidthRequest="200"
+                       Grid.Column="1"/>
+                <Button Text="Comprobar" 
+                        Clicked="ButtonComprobar_Clicked"
+                        FontSize="24" 
+                        HorizontalOptions="Center"
+                        Margin="10"
+                        Grid.Row="1"
+                        />
+                <Label x:Name="labelIntentos" FontSize="20" HorizontalOptions="Center" Margin="0,20"/>
+                <Label x:Name="labelVictorias" FontSize="20" HorizontalOptions="Center"/>
+
+
+            </Grid>
+            <!--<Image x:Name="imagenAhorcado" HorizontalOptions="Center"/>
+            <StackLayout Margin="20">
+                <Label x:Name="labelMultiplicacion" FontSize="24" HorizontalOptions="Center"/>
+            <Entry x:Name="textBoxRespuesta" Placeholder="Introduce tu respuesta" FontSize="24"
+               Keyboard="Numeric" HorizontalOptions="Center" WidthRequest="200"/>
+            <Button Text="Comprobar" Clicked="ButtonComprobar_Clicked"
+                FontSize="24" HorizontalOptions="Center"/>
+                <Label x:Name="labelIntentos" FontSize="20" HorizontalOptions="Center" Margin="0,20"/>
+                <Label x:Name="labelVictorias" FontSize="20" HorizontalOptions="Center"/>-->
+                
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
