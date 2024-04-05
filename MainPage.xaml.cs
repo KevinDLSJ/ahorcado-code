@@ -68,7 +68,7 @@ namespace aho
 
             var imagen = ImageSource.FromResource($"aho.Resources.Images.{nombreImagen}");
 
-            // Asignar la imagen al control Image en la interfaz de usuario
+         
             imagenAhorcado.Source = imagen;
         }
 
@@ -76,39 +76,38 @@ namespace aho
 
         private void ReiniciarJuego()
         {
-            intentosRestantes = 7; // Reiniciar el número de intentos a 8
+            intentosRestantes = 7;
             SeleccionarNuevaMultiplicacion();
             MostrarImagenAhorcado();
         }
 
         private void ButtonComprobar_Clicked(object sender, EventArgs e)
         {
-            // Obtener la respuesta ingresada por el usuario desde el TextBox
             string respuestaUsuarioTexto = textBoxRespuesta.Text;
 
-            // Convertir la respuesta ingresada por el usuario a un número entero
+           
             if (!int.TryParse(respuestaUsuarioTexto, out int respuestaUsuario))
             {
                 DisplayAlert("Error", "Por favor, ingresa un número válido.", "OK");
-                return; // Salir del método si la respuesta no es válida
+                return; 
             }
 
-            // Verificar si la respuesta del usuario es correcta
+           
             if (respuestaUsuario == respuestaCorrecta)
             {
                 DisplayAlert("¡Correcto!", "Has acertado la respuesta.", "OK");
                 
                 victorias++;
-                labelVictorias.Text = "Victorias: " + victorias.ToString(); // Actualizar
+                labelVictorias.Text = "Victorias: " + victorias.ToString(); 
                 labelIntentos.Text = "Intentos restantes: " + intentosRestantes.ToString();
                 ReiniciarJuego();
             }
             else
             {
                 DisplayAlert("Respuesta incorrecta", "Inténtalo de nuevo.", "OK");
-                intentosRestantes--; // Restar un intento
+                intentosRestantes--; 
                 labelIntentos.Text = "Intentos restantes: " + intentosRestantes.ToString();
-                MostrarImagenAhorcado(); // Mostrar la imagen actualizada del ahorcado
+                MostrarImagenAhorcado(); 
 
                 if (intentosRestantes == 0)
                 {
